@@ -1,0 +1,49 @@
+﻿@model Restaurante.Models.Pedidos.Pedido
+@using Restaurante.Enums.Prato;
+@using Restaurante.Enums.Bebida;    
+@using Restaurante.Enums.Mesa;
+
+<section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            
+            <p>Pedidos</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <form asp-action="FazerPedido" method="post">
+
+
+                        <div>
+                            <label asp-for="Pratos"></label>
+                            <select asp-for="Pratos" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Prato.Pratos>()"></select>
+                        </div>
+                        <div>
+                            <label asp-for="Bebida"></label>
+                            <select asp-for="Bebida" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Bebida.Bebidas>()"></select>
+                        </div>
+                        <div>
+                            <label asp-for="Quantidade"></label>
+                            <input asp-for="Quantidade" />
+                        </div>
+                        <div>
+                            <label asp-for="Mesa"></label>
+                            <select asp-for="Mesa" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Mesa.Mesas>()"></select>
+                        </div>
+                        <div>
+                            <label asp-for="NomeSolicitante"></label>
+                            <input asp-for="NomeSolicitante" />
+                        </div>
+                        <button class="book-a-table-btn scrollto d-none d-lg-flex" type="submit">Fazer Pedido</button>
+                    </form>
+                </div>
+            </div>   
+
+        </div>
+
+    </div>
+</section>
