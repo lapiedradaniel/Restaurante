@@ -17,7 +17,7 @@ namespace Restaurante.Models.Cozinha
 
         public Pedido? Pedido { get; set; }
 
-        public StatusPedido Status { get; set; }
+        public string? Status { get; set; }
 
         public DateTime DataHora { get; set; } = DateTime.Now;
     }

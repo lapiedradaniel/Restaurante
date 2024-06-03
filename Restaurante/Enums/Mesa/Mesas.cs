@@ -2,15 +2,20 @@
 
 namespace Restaurante.Enums.Mesa
 {
-    public enum Mesas
+    public static class Mesas
     {
-        [Display(Name = "Mesa 1")]
-        Mesa1,
-        [Display(Name = "Mesa 2")]
-        Mesa2,
-        [Display(Name = "Mesa 3")]
-        Mesa3,
-        
-    }
+        public static List<string> mesas = new List<string>()
+        {
+          "Mesa 1",
+
+          "Mesa 2",
+
+           "Mesa 3"
+
+
+
+
+        };
+    }     
 
 }

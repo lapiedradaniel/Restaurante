@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurante.Models.Pedidos;
 using Restaurante.Services.Pedidos;
 
 namespace Restaurante.Controllers
 {
-    
+    [Authorize]
     public class PedidoController : Controller
     {
         private readonly PedidoService _pedidoService;
@@ -20,6 +21,7 @@ namespace Restaurante.Controllers
             return View(new Pedido());
         }
 
+        
         [HttpPost]
         public async Task<IActionResult> FazerPedido(Pedido model)
         {

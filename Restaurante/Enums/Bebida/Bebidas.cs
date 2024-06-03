@@ -2,15 +2,18 @@
 
 namespace Restaurante.Enums.Bebida
 {
-    public enum Bebidas
-    {
-        [Display(Name = "Coca Cola")]
-        CocaCola,
-        [Display(Name = "Suco de Laranja")]
-        SucoDeLaranja,
-        [Display(Name = "Água")]
-        Agua,
-        
-    }
+    
 
+    public static class Bebidas
+    {
+        public static List<string> bebidas = new List<string>()
+        {
+          "Coca Cola",
+
+          "Suco de Laranja",
+
+           "Água"
+
+        };
+    }
 }

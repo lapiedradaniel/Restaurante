@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Restaurante.Models.Copa.PedidoCopa>
+
+@{
+    ViewData["Title"] = "Pedidos da Copa";
+}
+
+<div class="container">
+    <section class="mx-auto my-5">
+        <div class="row row-cols-2">
+            @foreach (var pedidoCopa in Model)
+            {
+                <div class="col mb-4">
+                    <div class="card" style="max-width: 23rem;">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title font-weight-bold">Status: @pedidoCopa.Status</h5>
+                            <hr />
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-black">Bebida:</p>
+                                </div>
+                                <div class="col">
+                                    <p>@pedidoCopa.Pedido?.Bebida</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-black">Quantidade:</p>
+                                </div>
+                                <div class="col">
+                                    <p>@pedidoCopa.Pedido?.Quantidade</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-black">Mesa:</p>
+                                </div>
+                                <div class="col">
+                                    <p>@pedidoCopa.Pedido?.Mesa</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-black">Nome Solicitante:</p>
+                                </div>
+                                <div class="col">
+                                    <p>@pedidoCopa.Pedido?.NomeSolicitante</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-black">Hora:</p>
+                                </div>
+                                <div class="col">
+                                    <p>@pedidoCopa.DataHora.ToString("HH:mm")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+

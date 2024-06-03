@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Restaurante.Context;
 using Restaurante.Services.Copa;
 using Restaurante.Services.Cozinha;
+using Restaurante.Services.Interface;
 using Restaurante.Services.Pedidos;
 
 namespace Restaurante
@@ -17,7 +20,6 @@ namespace Restaurante
             builder.Services.AddControllersWithViews();
 
             var connection = builder.Configuration.GetConnectionString("DefaultConnection");
-
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
             builder.Services.AddIdentity<IdentityUser, IdentityRole>()
@@ -28,28 +30,43 @@ namespace Restaurante
             builder.Services.AddScoped<CozinhaService>();
             builder.Services.AddScoped<CopaService>();
 
+            
+            builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            
+            CriarPerfisUsuarios(app);
+
+            
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Account}/{action=Login}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
+
+        private static void CriarPerfisUsuarios(WebApplication app)
+        {
+            using (var scope = app.Services.CreateScope())
+            {
+                var seeder = scope.ServiceProvider.GetRequiredService<ISeedUserRoleInitial>();
+                seeder.SeedRoles();
+                seeder.SeedUsers();
+            }
+        }
     }
 }
+

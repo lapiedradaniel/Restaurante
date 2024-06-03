@@ -14,22 +14,22 @@ namespace Restaurante.Models.Pedidos
         public int PedidoId { get; set; }
 
         [Required]
-        public Pratos Pratos { get; set; }
+        public string? Pratos { get; set; }
 
         [Required]
-        public Bebidas Bebida { get; set; }
+        public string? Bebida { get; set; }
 
         [Required]
         public int Quantidade { get; set; }
 
         [Required]
-        public Mesas Mesa { get; set; }
+        public string? Mesa { get; set; }
 
         [Required]
         public string? NomeSolicitante { get; set; }
 
         public DateTime DataHora { get; set; } = DateTime.Now;
 
-        public StatusPedido Status { get; set; } 
+        public string? Status { get; set; } 
     }
 }

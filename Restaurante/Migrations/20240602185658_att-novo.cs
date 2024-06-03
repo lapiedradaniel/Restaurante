@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Restaurante.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicio : Migration
+    public partial class attnovo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,10 +59,10 @@ namespace Restaurante.Migrations
                     Pratos = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Mesa = table.Column<int>(type: "int", nullable: false),
+                    Mesa = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NomeSolicitante = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataHora = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -182,7 +182,7 @@ namespace Restaurante.Migrations
                     CopaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PedidoId = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataHora = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -203,7 +203,7 @@ namespace Restaurante.Migrations
                     CozinhaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PedidoId = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataHora = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

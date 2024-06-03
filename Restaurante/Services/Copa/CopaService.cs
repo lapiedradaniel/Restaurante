@@ -1,5 +1,7 @@
-﻿using Restaurante.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Restaurante.Context;
 using Restaurante.Models.Copa;
+using Restaurante.Models.Cozinha;
 
 namespace Restaurante.Services.Copa
 {
@@ -17,6 +19,11 @@ namespace Restaurante.Services.Copa
 
             _context.PedidoCopa.Add(pedidoCopa);
             await _context.SaveChangesAsync();
+        }
+
+        public IEnumerable<PedidoCopa> ListarPedidosCopa()
+        {
+            return _context.PedidoCopa.Include(c => c.Pedido).ToList();
         }
     }
 }

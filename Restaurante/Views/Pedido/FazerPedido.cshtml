@@ -6,44 +6,75 @@
 <section id="why-us" class="why-us">
     <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-            
-            <p>Pedidos</p>
-        </div>
-
-        <div class="row">
-
-            <div class="col-lg-4">
-                <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                    <form asp-action="FazerPedido" method="post">
-
-
-                        <div>
-                            <label asp-for="Pratos"></label>
-                            <select asp-for="Pratos" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Prato.Pratos>()"></select>
-                        </div>
-                        <div>
-                            <label asp-for="Bebida"></label>
-                            <select asp-for="Bebida" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Bebida.Bebidas>()"></select>
-                        </div>
-                        <div>
-                            <label asp-for="Quantidade"></label>
-                            <input asp-for="Quantidade" />
-                        </div>
-                        <div>
-                            <label asp-for="Mesa"></label>
-                            <select asp-for="Mesa" asp-items="Html.GetEnumSelectList<Restaurante.Enums.Mesa.Mesas>()"></select>
-                        </div>
-                        <div>
-                            <label asp-for="NomeSolicitante"></label>
-                            <input asp-for="NomeSolicitante" />
-                        </div>
-                        <button class="book-a-table-btn scrollto d-none d-lg-flex" type="submit">Fazer Pedido</button>
-                    </form>
+        <section id="why-us" class="why-us">
+            <div class="container" data-aos="fade-up">
+                
+                <div class="section-title">
+                    <p class="text-center m-4">Orders</p>
                 </div>
-            </div>   
 
-        </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                            <form asp-action="FazerPedido" method="post">
+                                <div class="form-group row m-3">
+                                    <label asp-for="Pratos" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <select asp-for="Pratos" class="form-control">
+                                            @foreach (var prato in Restaurante.Enums.Prato.Prato.pratos)
+                                            {
+                                                <option value="@prato">@prato</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row m-3">
+                                    <label asp-for="Bebida" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <select asp-for="Bebida" class="form-control">
+                                            @foreach (var bebida in Restaurante.Enums.Bebida.Bebidas.bebidas)
+                                            {
+                                                <option value="@bebida">@bebida</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row m-3">
+                                    <label asp-for="Quantidade" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <input asp-for="Quantidade" min="1" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group row m-3">
+                                    <label asp-for="Mesa" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <select asp-for="Mesa" class="form-control">
+                                            @foreach (var mesa in Restaurante.Enums.Mesa.Mesas.mesas)
+                                            {
+                                                <option value="@mesa">@mesa</option>
+                                            }
+                                        </select>
+
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group row m-3">
+                                    <label asp-for="NomeSolicitante" class="col-sm-3 col-form-label">Nome Solicitante</label>
+                                    <div class="col-sm-9">
+                                        <input asp-for="NomeSolicitante" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 text-end mt-4">
+                                        <button class="btn btn-outline-warning" type="submit">Fazer Pedido</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
 </section>
