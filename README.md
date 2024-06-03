@@ -21,7 +21,7 @@ Este projeto é um sistema de gerenciamento de pedidos para um restaurante. Ele 
 
 <h3>Clonar o Repositório</h3>
 
-- git clone https://github.com/seu-usuario/nome-do-repositorio.git
+- git clone https://github.com/lapiedradaniel/Restaurante
 - cd nome-do-repositorio
 
 <h3>Configurar a String de Conexão</h3> 
