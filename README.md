@@ -67,7 +67,7 @@ Este projeto é um sistema de gerenciamento de pedidos para um restaurante. Ele 
 
 - Depois de criar um pedido com uma conta de usuário normal, faça login com a conta de administrador para visualizar os pedidos na cozinha e na copa.
 
-- Siga essas instruções para configurar e usar o sistema corretamente. Se você encontrar algum problema ou tiver alguma dúvida, sinta-se à vontade para abrir uma issue no repositório do GitHub.
+- Siga essas instruções para configurar e usar o sistema corretamente. Se você encontrar algum problema ou tiver alguma dúvida, estou à disposição para ajudar.
 
 
 <h1> Estrutura do Projeto </h1>
