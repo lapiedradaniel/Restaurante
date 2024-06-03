@@ -46,9 +46,10 @@ Este projeto é um sistema de gerenciamento de pedidos para um restaurante. Ele 
 <h1>Seed de Usuários e Roles</h1>
 
 - Quando o projeto é executado pela primeira vez, a classe SeedUserRoleInitial será responsável por criar um usuário administrador e o papel correspondente.
-- Usuário Administrador
-- Email: admin@localhost
-- Senha: Numsey#2022
+- Login do Admin abaixo
+
+- UserName: admin@localhost
+- Password: Numsey#2022
 
 
 <h1>Acesso do Administrador</h1>
