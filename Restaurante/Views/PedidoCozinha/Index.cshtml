@@ -4,60 +4,67 @@
     ViewData["Title"] = "Pedidos da Cozinha";
 }
 
-<div class="container">
-    <section class="mx-auto my-5">
-        <div class="row row-cols-2">
-            @foreach (var pedidoCozinha in Model)
-            {
-                <div class="col mb-4">
-                    <div class="card" style="max-width: 23rem;">
-                        <div class="card-body text-dark">
-                            <h5 class="card-title font-weight-bold">Status: @pedidoCozinha.Status</h5>
-                            <hr />
-                            <div class="row">
-                                <div class="col">
-                                    <p class="font-weight-bold text-black">Prato:</p>
+@if (Model == null || !Model.Any())
+{
+    <h1> Nenhum Pedido </h1>
+}
+else
+{
+    <div class="container">
+        <section class="mx-auto my-5">
+            <div class="row row-cols-2">
+                @foreach (var pedidoCozinha in Model)
+                {
+                    <div class="col mb-4">
+                        <div class="card" style="max-width: 23rem;">
+                            <div class="card-body text-dark">
+                                <h5 class="card-title font-weight-bold">Status: @pedidoCozinha.Status</h5>
+                                <hr />
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="font-weight-bold text-black">Prato:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>@pedidoCozinha.Pedido?.Pratos</p>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <p>@pedidoCozinha.Pedido?.Pratos</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="font-weight-bold text-black">Quantidade:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>@pedidoCozinha.Pedido?.Quantidade</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="font-weight-bold text-black">Quantidade:</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="font-weight-bold text-black">Mesa:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>@pedidoCozinha.Pedido?.Mesa</p>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <p>@pedidoCozinha.Pedido?.Quantidade</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="font-weight-bold text-black">Nome Solicitante:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>@pedidoCozinha.Pedido?.NomeSolicitante</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="font-weight-bold text-black">Mesa:</p>
-                                </div>
-                                <div class="col">
-                                    <p>@pedidoCozinha.Pedido?.Mesa</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="font-weight-bold text-black">Nome Solicitante:</p>
-                                </div>
-                                <div class="col">
-                                    <p>@pedidoCozinha.Pedido?.NomeSolicitante</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="font-weight-bold text-black">Hora:</p>
-                                </div>
-                                <div class="col">
-                                    <p>@pedidoCozinha.DataHora.ToString("HH:mm")</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="font-weight-bold text-black">Hora:</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>@pedidoCozinha.DataHora.ToString("HH:mm")</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
-        </div>
-    </section>
-</div>
+                }
+            </div>
+        </section>
+    </div>
+}

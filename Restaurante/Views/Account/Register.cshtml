@@ -13,7 +13,7 @@
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <form asp-controller="Account" asp-action="Register" method="post" class="card-body p-5 text-center">
 
-                        <div class="mb-md-5 mt-md-4 pb-5">
+                        <div class="mb-md-5 mt-md-4 pb-2">
 
                             <h2 class="fw-bold mb-2 text-uppercase">
                                 Register
@@ -21,32 +21,30 @@
                             <p class="text-white-50 mb-5">Please register your login and password!</p>
 
                             <div asp-validation-summary="All" class="text-white"></div>
-                            <div class="form-outline form-white mb-4">
+                            <div class="form-outline form-white mb-3">
                                 <label asp-for="UserName" class="form-label" for="typeEmailX">UserName</label>
                                 <input asp-for="UserName" id="typeEmailX" class="form-control form-control-lg m-2" />
                                 <span asp-validation-for="UserName" class="text-white"></span>
 
                             </div>
 
-                            <div class="form-outline form-white mb-4">
+                            <div class="form-outline form-white mb-3">
                                 <label asp-for="Password" class="form-label" for="typePasswordX">Password</label>
                                 <input asp-for="Password" id="typePasswordX" class="form-control form-control-lg m-2" />
                                 <span asp-validation-for="Password" class="text-white"></span>
 
                             </div>
 
-                            <div class="form-outline form-white mb-4">
+                            <div class="form-outline form-white mb-3">
                                 <label asp-for="ConfirmPassword" class="form-label" for="typePasswordX">ConfirmPassword</label>
                                 <input asp-for="ConfirmPassword" id="typePasswordX" class="form-control form-control-lg m-2" />
                                 <span asp-validation-for="ConfirmPassword" class="text-white"></span>
 
                             </div>
 
-                            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                            <p class="small mb-3 pb-lg-1"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-                            <button class="btn btn-outline-light btn-lg px-5" type="submit" value="Registrar">Registrar</button>
-
-
+                            <button class="btn btn-outline-light btn-lg px-4" type="submit" value="Registrar">Registrar</button>
 
                         </div>
 
@@ -62,4 +60,6 @@
         </div>
     </div>
 </section>
-<br />
+<br/>
+<br/>
+<br/>
