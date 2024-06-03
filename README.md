@@ -59,7 +59,7 @@ Este projeto é um sistema de gerenciamento de pedidos para um restaurante. Ele 
 
 <h1>Criar uma Conta de Usuário </h1>
 
-- Registre um novo usuário no sistema com um email e uma senha que contenha letras, números e caracteres especiais.
+- Registre um novo usuário no sistema com um nome e uma senha que contenha letras, números e caracteres especiais.
 - Faça login com essa conta recém-criada.
 - Realize um pedido.
 
