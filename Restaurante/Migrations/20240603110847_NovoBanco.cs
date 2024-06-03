@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Restaurante.Migrations
 {
     /// <inheritdoc />
-    public partial class attnovo : Migration
+    public partial class NovoBanco : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,8 +57,9 @@ namespace Restaurante.Migrations
                     PedidoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pratos = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    QuantidadePratos = table.Column<int>(type: "int", nullable: false),
                     Bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    QuantidadeBebidas = table.Column<int>(type: "int", nullable: false),
                     Mesa = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NomeSolicitante = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataHora = table.Column<DateTime>(type: "datetime2", nullable: false),

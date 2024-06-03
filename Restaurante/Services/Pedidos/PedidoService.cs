@@ -38,7 +38,7 @@ namespace Restaurante.Services.Pedidos
 
             await _cozinhaService.CriarPedidoCozinha(new PedidoCozinha
             {
-                PedidoId = pedido.PedidoId, 
+                PedidoId = pedido.PedidoId,                
                 DataHora = DateTime.Now,
                 Status = pedido.Status.ToString(),
                 Pedido = pedido

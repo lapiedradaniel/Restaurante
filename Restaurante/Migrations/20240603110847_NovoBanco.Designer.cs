@@ -12,8 +12,8 @@ using Restaurante.Context;
 namespace Restaurante.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240602185658_att-novo")]
-    partial class attnovo
+    [Migration("20240603110847_NovoBanco")]
+    partial class NovoBanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -298,7 +298,10 @@ namespace Restaurante.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int>("QuantidadeBebidas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantidadePratos")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")

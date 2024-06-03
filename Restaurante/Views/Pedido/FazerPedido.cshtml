@@ -29,6 +29,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row m-3">
+                                    <label asp-for="QuantidadePratos" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <input asp-for="QuantidadePratos" min="1" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group row m-3">
                                     <label asp-for="Bebida" class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
                                         <select asp-for="Bebida" class="form-control">
@@ -40,9 +46,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row m-3">
-                                    <label asp-for="Quantidade" class="col-sm-3 col-form-label"></label>
+                                    <label asp-for="QuantidadeBebidas" class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input asp-for="Quantidade" min="1" class="form-control" />
+                                        <input asp-for="QuantidadeBebidas" min="1" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="form-group row m-3">

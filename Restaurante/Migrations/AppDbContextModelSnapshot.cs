@@ -295,7 +295,10 @@ namespace Restaurante.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int>("QuantidadeBebidas")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantidadePratos")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")

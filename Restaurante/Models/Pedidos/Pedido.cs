@@ -17,10 +17,13 @@ namespace Restaurante.Models.Pedidos
         public string? Pratos { get; set; }
 
         [Required]
+        public int QuantidadePratos { get; set; }
+
+        [Required]
         public string? Bebida { get; set; }
 
         [Required]
-        public int Quantidade { get; set; }
+        public int QuantidadeBebidas { get; set; }
 
         [Required]
         public string? Mesa { get; set; }
